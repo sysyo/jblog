@@ -14,14 +14,19 @@
 	<div class="center-content">
 		<h1 class="logo" style="background:url(${pageContext.request.contextPath}/assets/images/logo.jpg) 0 0 no-repeat;  ">JBlog</h1>
 		<ul class="menu">
-			<li><a href="">로그인</a></li>
-			<li><a href="">회원가입</a></li>
-			<li><a href="">로그아웃</a></li>
-			<li><a href="">내블로그</a></li>
+			<li><a href="${pageContext.request.contextPath }/user/login">로그인</a></li>
+			<li><a href="${pageContext.request.contextPath }/user/join">회원가입</a></li>
+			<li><a href="${pageContext.request.contextPath }/views/main/index.jsp">로그아웃</a></li>
+			<li><a href="${pageContext.request.contextPath }/views/blog/blog-main.jsp">내블로그</a></li>
 		</ul>
-		<form class="login-form">
+		<form class="login-form" method="post" action="${pageContext.request.contextPath}/user/auth">
       		<label>아이디</label> <input type="text" name="id">
       		<label>패스워드</label> <input type="text" name="password">
+      		<c:if test='${result == "fail" }'>
+				<p>
+						로그인이 실패 했습니다.
+				</p>
+			</c:if>
       		<input type="submit" value="로그인">
 		</form>
 	</div>

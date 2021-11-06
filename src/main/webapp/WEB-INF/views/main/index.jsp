@@ -14,10 +14,10 @@
 <%-- 		<h1 class="logo" style="background:url(${pageContext.request.contextPath}/assets/images/logo.jpg) 0 0 no-repeat 0 0">JBlog</h1> --%>
 		<h1 class="logo" style="background:url(${pageContext.request.contextPath}/assets/images/logo.jpg) 0 0 no-repeat;  ">JBlog</h1>
 		<ul class="menu">
-			<li><a href="">로그인</a></li>
-			<li><a href="">회원가입</a></li>
-			<li><a href="">로그아웃</a></li>
-			<li><a href="">내블로그</a></li>
+			<li><a href="${pageContext.request.contextPath }/user/login">로그인</a></li>
+			<li><a href="${pageContext.request.contextPath }/user/join">회원가입</a></li>
+			<li><a href="${pageContext.request.contextPath }/views/main/index.jsp">로그아웃</a></li>
+			<li><a href="${pageContext.request.contextPath }/views/blog/blog-main.jsp">내블로그</a></li>
 		</ul>
 		<form class="search-form">
 			<fieldset>

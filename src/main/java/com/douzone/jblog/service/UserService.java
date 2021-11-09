@@ -17,11 +17,17 @@ public class UserService {
 		userRepository.insert(vo);
 	}
 	
+	// 회원 가입 시 중복 체크
+	public UserVO getUser(String id) {
+		
+		return userRepository.findById(id);
+	}
+	
 	// login -> id, password check 
 	public UserVO getUser(String id, String password) {
 		return userRepository.findByIdAndPassword(id, password);
 	}
-	
+
 	
 
 }

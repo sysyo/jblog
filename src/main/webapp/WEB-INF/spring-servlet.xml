@@ -51,6 +51,16 @@
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	
+		<!-- Message Source -->		
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>messages/messages_ko</value>
+			</list>
+		</property>
+	</bean>		
+	
 
 	<context:annotation-config />
 	<context:component-scan base-package="com.douzone.jblog.controller, com.douzone.jblog.exception" />
@@ -61,6 +71,10 @@
 		<mvc:interceptor>
 			<mvc:mapping path="/user/auth"/>
 			<bean class="com.douzone.jblog.security.LoginInterceptor" />
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/user/logout"/>
+			<bean class="com.douzone.jblog.security.LogoutInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
 	

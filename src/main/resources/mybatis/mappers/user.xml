@@ -13,11 +13,18 @@
 	<select id="findByIdAndPassword" parameterType="map"
 		resultType="userVO">
 		<![CDATA[
-		select id, password
+		select id, name
 		  from user
 		 where id=#{id }
 		   and password=#{password }
 		]]>
 	</select>
 
+	<select id="findById" parameterType="string" resultType="userVO">
+		<![CDATA[
+		select id
+		  from user
+		 where id=#{id }
+		]]>
+	</select>
 </mapper>

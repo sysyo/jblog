@@ -10,15 +10,8 @@
 <Link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/jblog.css">
 </head>
 <body>
-	<div class="center-content">
-<%-- 		<h1 class="logo" style="background:url(${pageContext.request.contextPath}/assets/images/logo.jpg) 0 0 no-repeat 0 0">JBlog</h1> --%>
-		<h1 class="logo" style="background:url(${pageContext.request.contextPath}/assets/images/logo.jpg) 0 0 no-repeat;  ">JBlog</h1>
-		<ul class="menu">
-			<li><a href="${pageContext.request.contextPath }/user/login">로그인</a></li>
-			<li><a href="${pageContext.request.contextPath }/user/join">회원가입</a></li>
-			<li><a href="${pageContext.request.contextPath }/views/main/index.jsp">로그아웃</a></li>
-			<li><a href="${pageContext.request.contextPath }/views/blog/blog-main.jsp">내블로그</a></li>
-		</ul>
+<div class="center-content">
+	<c:import url="/WEB-INF/views/includes/header.jsp" />
 		<form class="search-form">
 			<fieldset>
 				<input type="text" name="keyword" />

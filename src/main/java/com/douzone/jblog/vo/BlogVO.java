@@ -1,6 +1,6 @@
 package com.douzone.jblog.vo;
 
-public class BlogIdVO {
+public class BlogVO {
 	private String id;
 	private String title;
 	private String logo;

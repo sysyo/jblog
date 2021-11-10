@@ -81,6 +81,7 @@
 
 			<label class="block-label" for="password">패스워드</label>
 			<input id="password" name="password" type="password" />
+			
 
 			<fieldset>
 				<legend>약관동의</legend>

@@ -16,66 +16,85 @@
 
 	<!-- auto proxy -->
 	<aop:aspectj-autoproxy />
-	
+
 	<!-- validator, conversionService, messageConverter를 자동으로 등록 -->
 	<mvc:annotation-driven>
 		<mvc:message-converters>
-			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+			<bean
+				class="org.springframework.http.converter.StringHttpMessageConverter">
 				<property name="supportedMediaTypes">
 					<list>
 						<value>text/html; charset=UTF-8</value>
 					</list>
 				</property>
 			</bean>
-			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+			<bean
+				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
 				<property name="supportedMediaTypes">
 					<list>
 						<value>application/json; charset=UTF-8</value>
 					</list>
 				</property>
-			</bean>			
+			</bean>
 		</mvc:message-converters>
-		
-<!-- 		<mvc:argument-resolvers> security 만들 때--> 
-<!-- 			<bean class="com.douzone.jblog.security.AuthUserHandlerMethodArgumentResolver" /> -->
-<!-- 		</mvc:argument-resolvers> -->
-		
+
+		<mvc:argument-resolvers> 
+		<bean class="com.douzone.jblog.security.AuthUserHandlerMethodArgumentResolver" 
+			/>
+		</mvc:argument-resolvers>
+
 	</mvc:annotation-driven>
-	
+
 	<!-- 서블릿 컨테이너(tomcat)의 DefaultServlet 위임(Delegate) Handler -->
-	<mvc:default-servlet-handler/>
-	
-		<!-- ViewResolver 설정 / 있어야 jsp 페이지를 들고 올 수 있음-->
-	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+	<mvc:default-servlet-handler />
+
+	<!-- ViewResolver 설정 / 있어야 jsp 페이지를 들고 올 수 있음 -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	
-		<!-- Message Source -->		
-	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+
+	<!-- Message Source -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basenames">
 			<list>
 				<value>messages/messages_ko</value>
 			</list>
 		</property>
-	</bean>		
-	
+	</bean>
+
 
 	<context:annotation-config />
-	<context:component-scan base-package="com.douzone.jblog.controller, com.douzone.jblog.exception" />
-	
+	<context:component-scan
+		base-package="com.douzone.jblog.controller, com.douzone.jblog.exception" />
+
 
 	<!-- Interceptors -->
 	<mvc:interceptors>
 		<mvc:interceptor>
-			<mvc:mapping path="/user/auth"/>
+			<mvc:mapping path="/user/auth" />
 			<bean class="com.douzone.jblog.security.LoginInterceptor" />
 		</mvc:interceptor>
 		<mvc:interceptor>
-			<mvc:mapping path="/user/logout"/>
+			<mvc:mapping path="/user/logout" />
 			<bean class="com.douzone.jblog.security.LogoutInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
-	
+
+	<!-- blog/adminBasic 로고이미지 -->
+	<!-- Multipart Resolver -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 최대업로드 가능한 바이트 크기 -->
+		<property name="maxUploadSize" value="52428800" />
+		<!-- 디스크에 임시 파일을 생성하기 전에 메모리에 보관 할 수 있는 최대 바이트 크기 -->
+		<!-- property name="maxInMemorySize" value="52428800" / -->
+		<!-- defaultEncoding -->
+		<property name="defaultEncoding" value="utf-8" />
+	</bean>
+
 </beans>

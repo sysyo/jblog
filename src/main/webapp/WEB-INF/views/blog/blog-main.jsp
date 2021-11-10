@@ -11,14 +11,7 @@
 </head>
 <body>
 	<div id="container">
-		<div id="header">
-			<h1>Spring 이야기</h1>
-			<ul>
-				<li><a href="${pageContext.request.contextPath }/user/login">로그인</a></li>
-				<li><a href="${pageContext.request.contextPath }/views/main/index.jsp">로그아웃</a></li>
-				<li><a href="${pageContext.request.contextPath }/views/blog/blog-admin-basic.jsp">블로그 관리</a></li>
-			</ul>
-		</div>
+		<c:import url="/WEB-INF/views/includes/blogHeader.jsp" />
 		<div id="wrapper">
 			<div id="content">
 				<div class="blog-content">
@@ -42,7 +35,7 @@
 
 		<div id="extra">
 			<div class="blog-logo">
-				<img src="${pageContext.request.contextPath}/assets/images/spring-logo.jpg">
+				<img src="${pageContext.request.contextPath}${blog.logo}">
 			</div>
 		</div>
 

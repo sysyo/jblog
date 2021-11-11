@@ -10,7 +10,7 @@
 		   and logo=#{logo }
 		]]>
 	</select>
-	
+	 
 	<select id="find" parameterType="uservo" resultType="blogvo">
 		<![CDATA[
 		select title, logo, id

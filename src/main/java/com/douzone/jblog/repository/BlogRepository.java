@@ -14,8 +14,12 @@ public class BlogRepository {
 	private SqlSession sqlSession;
 	
 	public BlogVO find(UserVO vo) {
-		
 		return sqlSession.selectOne("blog.find", vo);
+	}
+
+	public boolean update(BlogVO vo) {
+		int count = sqlSession.update("blog.update", vo);
+		return count == 1;
 	}
 
 }

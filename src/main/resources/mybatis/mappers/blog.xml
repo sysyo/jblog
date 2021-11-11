@@ -18,4 +18,10 @@
 		 where id=#{id }
 		]]>
 	</select>
+	
+	<update id="update" parameterType="blogvo">
+		<![CDATA[
+		update site set title=#{title }, logo=#{logo }
+		]]>
+	</update>
 </mapper>

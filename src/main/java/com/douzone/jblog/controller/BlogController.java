@@ -39,18 +39,18 @@ public class BlogController {
 		BlogVO blog = blogService.getBlog(vo);
 		model.addAttribute("blog", blog);
 		
-		System.out.println("blogController - index" +vo);
+//		System.out.println("blogController - index" +vo);
 		return "blog/blog-main";
 	}
 	
 	@RequestMapping("/adminBasic")
 	public String blogAdmin(@AuthUser UserVO vo, Model model) {
 		
-		System.out.println("왜 안됨맨앤ㅇㄴ래야ㅕㄴㅇ래ㅑㄴ잉니ㅏㅓ");
+
 		BlogVO blog = blogService.getBlog(vo);
 		model.addAttribute("blog", blog);
 		
-		System.out.println("blogController - main" + blog);
+//		System.out.println("blogController - main" + blog);
 		
 		return "blog/blog-admin-basic";
 	}

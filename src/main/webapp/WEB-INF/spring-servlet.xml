@@ -38,9 +38,9 @@
 			</bean>
 		</mvc:message-converters>
 
-		<mvc:argument-resolvers> 
-		<bean class="com.douzone.jblog.security.AuthUserHandlerMethodArgumentResolver" 
-			/>
+		<mvc:argument-resolvers>
+			<bean
+				class="com.douzone.jblog.security.AuthUserHandlerMethodArgumentResolver" />
 		</mvc:argument-resolvers>
 
 	</mvc:annotation-driven>
@@ -71,6 +71,11 @@
 	<context:annotation-config />
 	<context:component-scan
 		base-package="com.douzone.jblog.controller, com.douzone.jblog.exception" />
+
+	<!-- mvc url-resource mapping -->
+	<mvc:resources mapping="/upload/images/**"
+		location="file:/upload-images/" />
+
 
 
 	<!-- Interceptors -->

@@ -1,6 +1,6 @@
 package com.douzone.jblog.vo;
 
-public class postVO {
+public class PostVO {
 	private long no;
 	private String title;
 	private String contents;

@@ -10,7 +10,7 @@
 		   and logo=#{logo }
 		]]>
 	</select>
-	 
+
 	<select id="find" parameterType="uservo" resultType="blogvo">
 		<![CDATA[
 		select title, logo, id
@@ -18,10 +18,20 @@
 		 where id=#{id }
 		]]>
 	</select>
-	
+
 	<update id="update" parameterType="blogvo">
 		<![CDATA[
-		update site set title=#{title }, logo=#{logo }
+		update blog 
+		set title=#{title }, logo=#{logo } 
+		where id=#{id }
 		]]>
 	</update>
+
+	<insert id="insert" parameterType="blogvo">
+		<![CDATA[
+		insert 
+		into blog
+		values (#{id}, #{logo}, #{title})
+		]]>
+	</insert>
 </mapper>

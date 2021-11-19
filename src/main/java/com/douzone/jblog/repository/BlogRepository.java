@@ -21,5 +21,10 @@ public class BlogRepository {
 		int count = sqlSession.update("blog.update", vo);
 		return count == 1;
 	}
+	
+	public boolean insert(BlogVO vo) {
+		int count = sqlSession.insert("blog.insert", vo);
+		return count == 1; 
+	}
 
 }

@@ -14,7 +14,7 @@ import com.douzone.jblog.exception.FileUploadException;
 
 @Service
 public class FileUploadService {
-	private static String SAVE_PATH = "/upload-mysite"; // C드라이브 저장 경로
+	private static String SAVE_PATH = "/upload-images"; // C드라이브 저장 경로
 	private static String URL_BASE = "/upload/images";	// 가상 url 만들어서 연결 
 	
 	public String restoreImage(MultipartFile file) throws FileUploadException {

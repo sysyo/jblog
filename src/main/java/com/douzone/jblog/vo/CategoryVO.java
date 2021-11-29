@@ -5,6 +5,7 @@ public class CategoryVO {
 	private String name;
 	private String desc;
 	private String blogId;
+	
 	public long getNo() {
 		return no;
 	}

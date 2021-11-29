@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.douzone.jblog.vo.BlogVO;
-import com.douzone.jblog.vo.UserVO;
 
 @Repository
 public class BlogRepository {
@@ -13,8 +12,8 @@ public class BlogRepository {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public BlogVO find(UserVO vo) {
-		return sqlSession.selectOne("blog.find", vo);
+	public BlogVO find(String id) {
+		return sqlSession.selectOne("blog.find", id);
 	}
 
 	public boolean update(BlogVO vo) {

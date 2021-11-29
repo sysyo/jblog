@@ -40,13 +40,13 @@
 		</div>
 
 		<div id="navigation">
-			<h2><a href="${pageContext.request.contextPath}/blog/adminCategory">카테고리</a></h2>
+			<h2><a href="${pageContext.request.contextPath}/blog/${blog.id }/adminCategory">카테고리</a></h2>
 			
 			<ul>
 			
 			<c:set var="count" value="${fn:length(list) }"/>
 		       <c:forEach items="${list }" var="vo" varStatus="status">
-							<li>${vo.name }</li>
+							<li><a>${vo.name }</a></li>
 					  </c:forEach>
 			  
 			</ul>

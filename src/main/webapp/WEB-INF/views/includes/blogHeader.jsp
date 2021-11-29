@@ -14,7 +14,7 @@
 			</c:when>
 			<c:otherwise>
 				<li><a href=#>${authUser.name } 님</a></li>
-				<li><a href="${pageContext.request.contextPath }/blog/adminBasic">블로그 관리</a></li>
+				<li><a href="${pageContext.request.contextPath }/blog/${authUser.id }/adminBasic">블로그 관리</a></li>
 				<li><a href="${pageContext.request.contextPath }/user/logout">로그아웃</a></li>
 
 			</c:otherwise>

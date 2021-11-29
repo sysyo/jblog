@@ -15,9 +15,9 @@
 		<div id="wrapper">
 			<div id="content" class="full-screen">
 				<ul class="admin-menu">
-					<li><a href="${pageContext.request.contextPath}/blog/adminBasic">기본설정</a></li>
+					<li><a href="${pageContext.request.contextPath}/blog/${blog.id }/adminBasic">기본설정</a></li>
 					<li class="selected">카테고리</li>
-					<li><a href="${pageContext.request.contextPath}/blog/write">글작성</a></li>
+					<li><a href="${pageContext.request.contextPath}/blog/${blog.id }/write">글작성</a></li>
 				</ul>
 		      	<table class="admin-cat">
 		      		<tr>
@@ -43,7 +43,7 @@
 										</c:when>
 										<c:otherwise>
 											<td>
-											<a href="${pageContext.request.contextPath }/blog/categoryDelete/${vo.no }">
+											<a href="${pageContext.request.contextPath }/blog/${blog.id }/categoryDelete/${vo.no }">
 												<img src="${pageContext.request.contextPath}/assets/images/delete.jpg">
 											</a>
 											</td>
@@ -55,7 +55,7 @@
 				</table>
       	
       			<h4 class="n-c">새로운 카테고리 추가</h4>
-      			<form action="${pageContext.request.contextPath }/blog/categoryAdd" method="post">
+      			<form action="${pageContext.request.contextPath }/blog/${blog.id }/categoryAdd" method="post">
 				      	<table id="admin-cat-add">
 				      		<tr>
 				      			<td class="t">카테고리명</td>

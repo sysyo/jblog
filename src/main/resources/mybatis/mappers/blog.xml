@@ -11,7 +11,7 @@
 		]]>
 	</select>
 
-	<select id="find" parameterType="uservo" resultType="blogvo">
+	<select id="find" parameterType="String" resultType="blogvo">
 		<![CDATA[
 		select title, logo, id
 		  from blog
